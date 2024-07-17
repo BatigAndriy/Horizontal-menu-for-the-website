@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-font-arial: Arial, sans-serif;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --body-width: 100%;
+    --max-body-width: 1400px;
+    --n-blocks: 4;
+    --n-cards: 4;
+    --padding-1-rem: 1rem;
+    --margin-1-rem: 1rem;
+    --margin-percen-01: 1%;
+    --padding-percen-01: 1%;
+    --margin-05-rem: 0.5rem;
+    --background-color-menu: #333;
+
+}
+
+html {
+    background: #f9f9f9;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    max-width: var(--max-body-width);
+}
+
+
+body {
+    font-family: var(--bs-font-arial);
+}
+
+
+.navbar {
+
+    margin: 2em 0;
+
+    width: var(--body-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color-menu);
+}
+
+
+.logo {
+    color: white;
+    font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+    padding: 0 1.5rem;
+}
+
+
+.menu-icon {
+    display: none;
+    font-size: clamp(0.85rem, 1.1vw, 1.2rem);
+    color: white;
+    cursor: pointer;
+}
+
+
+ul.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 32%;
+    min-width: 18em;
+}
+
+
+ul.nav-links li {
+    display: flex;
+    position: relative;
+    width: 25%;
+    min-width: 2.5em;
+}
+
+
+ul.nav-links li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.85rem, 1.1vw, 1.2rem);
+    padding: calc(var(--padding-percen-01) * 10) 0em calc(var(--padding-percen-01) * 10) 0em;
+    text-align: center;
+    width: var(--body-width);
+}
+
+
+ul.nav-links li a:hover {
+    color: #dfd0d0;
+}
+
+
+
+ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    width: 100%;
+    border-radius:  0 0 5px 5px;
+}
+
+
+ul.dropdown-menu li {
+    width: 100%;
+}
+
+
+ul.dropdown-menu li:hover {
+    background: #726b6b
+}
+
+
+ul.dropdown-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.7rem, 1.05vw, 1rem);
+    padding: 0.3em 0.7em;
+    text-align: left;
+    width: 100%;
+}
+
+
+ul.dropdown-menu li a:hover {
+     color: #dfd0d0;
+}
+
+
+
+.nav-links li:hover .dropdown-menu {
+    display: block;
+}
+
+
+@media (max-width: 580px) {
+
+    .navbar {
+    position: relative;}
+
+
+    .menu-icon {
+        display: block;
+        padding: 2% 0.8em;
+    }
+
+
+    ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+
+    ul.nav-links li {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 40%;
+        min-width: 2.5em;
+}
+
+
+    ul.nav-links li a{
+         font-size: clamp(0.8rem, 1.05vw, 1.1rem);
+         padding: calc(var(--padding-percen-01) * 8) 0.5em calc(var(--padding-percen-01) * 8) 0.5em;
+    }
+
+
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    ul.dropdown-menu {
+        position: static;
+        border-radius: 5px;
+        padding: 0;
+    }
+
+
+    ul.dropdown-menu li {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+
+    ul.dropdown-menu li a {
+        padding: 0.4rem 0.5rem;
+        width: 100%;
+         font-size: clamp(0.7rem, 1.05vw, 1.1rem);
+    }
+}
